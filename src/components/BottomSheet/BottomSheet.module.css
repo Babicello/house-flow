@@ -100,6 +100,12 @@
   height: 4px;
   border-radius: var(--radius-full);
   background: var(--content-low);
+  transition: opacity var(--sheet-duration) var(--sheet-ease);
+}
+
+/* Pushed back behind another sheet: dissolve the drag handle (fades back in on return) */
+.pushedBack .grabber {
+  opacity: 0;
 }
 
 .titleRow {
@@ -213,7 +219,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .sheet,
-  .sheet::backdrop {
+  .sheet::backdrop,
+  .grabber {
     transition: none;
   }
 }

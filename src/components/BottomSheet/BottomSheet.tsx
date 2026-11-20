@@ -27,6 +27,8 @@ export interface BottomSheetProps {
   footerSubtitle?: ReactNode;
   /** Figma `Padding`. Default: `true`. */
   padding?: boolean;
+  /** Take the full viewport height (minus the top inset) instead of fitting the content. */
+  fullHeight?: boolean;
   className?: string;
 }
 
@@ -50,6 +52,7 @@ export function BottomSheet({
   footer,
   footerSubtitle,
   padding = true,
+  fullHeight = false,
   className,
 }: BottomSheetProps) {
   const { ref, closing, dialogProps } = useDialog(open, onClose, { exitMs: SHEET_TRANSITION_MS });
@@ -78,6 +81,7 @@ export function BottomSheet({
       ref={ref}
       className={cx(
         styles.sheet,
+        fullHeight && styles.fullHeight,
         stackLayout.sheetsAbove > 0 && styles.pushedBack,
         closing && styles.closing,
         dragY > 0 && styles.dragging,

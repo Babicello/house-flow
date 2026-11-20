@@ -4,12 +4,12 @@ import { useEffect, useId, useLayoutEffect, useState, useSyncExternalStore, type
  * iOS-style stacking for bottom sheets.
  *
  * Open sheets register here in order. When a sheet is presented on top of another:
- * - the top sheet grows to at least the height of the sheet below, so their tops line up;
- * - the sheet below is scaled down and lifted so only `SHEET_PEEK` px of it shows above.
+ * - the top sheet grows so its top edge sits `SHEET_PEEK` px below the top of the sheet behind;
+ * - the sheet behind scales down in place (it is only lifted if the top sheet is taller than that).
  */
 
 /** How much of a pushed-back sheet stays visible above the sheet on top of it. */
-export const SHEET_PEEK = 20;
+export const SHEET_PEEK = 10;
 /** Scale applied to a pushed-back sheet. */
 export const SHEET_PUSHED_SCALE = 0.92;
 /** Shared by present, dismiss and push-back so all motion stays in sync (see --sheet-duration). */
@@ -84,11 +84,12 @@ export function useSheetStack(open: boolean, ref: RefObject<HTMLElement | null>)
     const above = index < stack.length - 1 ? stack[index + 1].ref.current : null;
 
     const next: SheetStackLayout = { sheetsAbove: stack.length - 1 - index };
-    if (below) next.minHeight = below.offsetHeight;
+    // Bottom-anchored sheets: start this one SHEET_PEEK px below the top of the sheet behind it.
+    if (below) next.minHeight = Math.max(0, below.offsetHeight - SHEET_PEEK);
     if (above && own) {
-      // Both sheets are bottom-anchored; lift this one so its top sits SHEET_PEEK px above the next.
-      const tallerBy = Math.max(0, above.offsetHeight - own.offsetHeight);
-      next.transform = `translateY(${-(SHEET_PEEK + tallerBy)}px) scale(${SHEET_PUSHED_SCALE})`;
+      // Scale back in place; lift only if the sheet on top would otherwise cover the peek.
+      const lift = Math.max(0, above.offsetHeight - (own.offsetHeight - SHEET_PEEK));
+      next.transform = `translateY(${-lift}px) scale(${SHEET_PUSHED_SCALE})`;
     }
 
     setLayout((current) =>

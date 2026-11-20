@@ -61,6 +61,7 @@ export function PatientDetailsDialog({
           onClose={onClose}
           header="minimal"
           title={TITLE}
+          fullHeight
           footer={
             <Button type="submit" form={formId} variant="primary" size="large" fullWidth>
               Save

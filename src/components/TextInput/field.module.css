@@ -1,0 +1,92 @@
+/* Shared field styles for text input and dropdown (Figma "Input" layer). */
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-1);
+  width: 100%;
+}
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  overflow: clip;
+  border: var(--border-width-default) solid var(--input-border);
+  border-radius: var(--radius-xl);
+  background: var(--input-bg);
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+
+/* State=Hover — border grows to 2px (inset ring keeps layout stable) */
+.control:hover {
+  box-shadow: inset 0 0 0 1px var(--input-border);
+}
+
+/* State=Focus / Active */
+.control:focus-within {
+  border-color: var(--input-border-active);
+  box-shadow: inset 0 0 0 1px var(--input-border-active);
+}
+
+/* State=Error */
+.error .control {
+  border-color: var(--feedback-warning);
+  box-shadow: none;
+}
+
+/* State=Disabled */
+.disabledControl,
+.disabledControl:hover {
+  border-color: var(--input-border-disabled);
+  box-shadow: none;
+}
+
+/* State=Read-only */
+.readOnlyControl,
+.readOnlyControl:hover,
+.readOnlyControl:focus-within {
+  border-color: transparent;
+  box-shadow: none;
+  background: var(--input-muted);
+}
+
+.input {
+  flex: 1 0 0;
+  min-width: 1px;
+  height: 100%;
+  margin: 0;
+  /* Figma py is 12px, but the 40px control height is what governs; keep text vertically centred */
+  padding: 0 var(--spacing-4);
+  border: 0;
+  outline: none;
+  background: transparent;
+  /* Figma: Body M family / line-height at a fixed 16px size */
+  font-family: var(--body-m-font);
+  font-size: 16px;
+  line-height: var(--body-m-line-height);
+  font-weight: var(--body-m-weight);
+  /* State=Completed / Active: entered value */
+  color: var(--content-xxxx-high);
+  text-overflow: ellipsis;
+}
+
+.input::placeholder {
+  color: var(--content-low);
+  opacity: 1;
+}
+
+.input:disabled {
+  color: var(--content-muted);
+  cursor: not-allowed;
+}
+
+input.input:read-only:not(:disabled) {
+  color: var(--content-high);
+}
+
+.errorText {
+  color: var(--feedback-warning);
+}

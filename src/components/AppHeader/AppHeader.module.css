@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2_5);
+  width: 100%;
+  max-width: 700px;
+  padding: var(--spacing-4) var(--spacing-3);
+}
+
+.logoLink {
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+}
+
+.logoLink:focus-visible,
+.userButton:focus-visible {
+  outline: 2px solid var(--interactive-focus);
+  outline-offset: 2px;
+}
+
+.user {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 1px;
+}
+
+.userButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2_5);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  cursor: pointer;
+}
+
+.chevron {
+  display: flex;
+  align-items: center;
+  height: var(--spacing-9);
+  color: var(--content-high);
+}

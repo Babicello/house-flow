@@ -1,0 +1,136 @@
+.listRow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+}
+
+/* has Highlight? — inset highlight surface behind the row */
+.highlight::before {
+  content: '';
+  position: absolute;
+  inset: var(--spacing-1);
+  border-radius: var(--radius-md);
+  background: var(--surface-highlight);
+  pointer-events: none;
+}
+
+.body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-2);
+  min-height: 66px;
+  padding: var(--spacing-2);
+}
+
+/* Figma overlaps the body and the divider by 1px */
+.withDivider {
+  margin-bottom: -1px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  width: 100%;
+  padding: var(--spacing-1_5) var(--spacing-2) var(--spacing-1);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+}
+
+.interactive {
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+
+/* State=Hover */
+.interactive:hover {
+  background: var(--interactive-hover);
+}
+
+/* State=Focus */
+.interactive:focus-visible {
+  outline: var(--border-width-default) solid var(--interactive-focus);
+  outline-offset: 0;
+}
+
+.container {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--spacing-3);
+  min-width: 1px;
+  min-height: var(--spacing-11);
+}
+
+.withControl {
+  padding-right: var(--spacing-1);
+}
+
+.textAndTrailing {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--spacing-2);
+  min-width: 1px;
+}
+
+.texts {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-0_5);
+  min-width: 1px;
+  padding-block: var(--spacing-0_5);
+  overflow-wrap: break-word;
+}
+
+.title {
+  color: var(--content-x-high);
+}
+
+.subtitle {
+  color: var(--content-high);
+}
+
+.badgeWrapper {
+  display: flex;
+  padding-top: var(--spacing-0_5);
+}
+
+.value {
+  flex-shrink: 0;
+  color: var(--content-high);
+}
+
+.actionLabel {
+  flex-shrink: 0;
+  color: var(--content-active);
+}
+
+.disclosure {
+  color: var(--content-active);
+}
+
+/* has Slot? — Border container */
+.slot {
+  display: flex;
+  padding: var(--spacing-1_5);
+  border-radius: var(--spacing-2);
+}
+
+.divider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-inline: var(--spacing-3_5);
+}

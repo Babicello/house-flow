@@ -1,0 +1,61 @@
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  width: 100%;
+  min-height: var(--spacing-11);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-lg);
+  color: var(--content-x-high);
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.texts {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  min-width: 1px;
+  overflow-wrap: break-word;
+}
+
+.sub {
+  color: var(--content-high);
+}
+
+.leading {
+  color: var(--content-active);
+}
+
+/* Indication */
+.check {
+  color: var(--content-active);
+}
+
+/* State=Hover / Focus (pointer or keyboard highlight) */
+.active {
+  background: var(--interactive-hover);
+}
+
+/* State=Selected */
+.selected {
+  background: var(--surface-highlight);
+}
+
+/* State=Selected-hover */
+.selected.active {
+  background: var(--surface-highlight-hover);
+}
+
+/* State=Disabled / Disabled Selected */
+.disabled {
+  color: var(--content-disabled);
+  cursor: not-allowed;
+}
+.disabled.selected {
+  background: none;
+}
+.disabled .check {
+  color: var(--content-disabled);
+}

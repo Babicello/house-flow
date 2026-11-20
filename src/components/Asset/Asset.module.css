@@ -1,0 +1,27 @@
+.asset {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  overflow: clip;
+}
+
+.asset img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+/* Positions taken from the Figma layer insets */
+.userBody {
+  inset: 63.49% -0.08% 0 -0.07%;
+  width: calc(100% + 0.15%);
+  height: 36.51%;
+}
+
+.userHead {
+  inset: 6.23% 26.66% 47.09% 26.66%;
+  width: 46.68%;
+  height: 46.68%;
+}

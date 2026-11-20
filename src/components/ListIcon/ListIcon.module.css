@@ -1,0 +1,35 @@
+.listIcon {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: var(--spacing-2);
+  color: var(--content-active);
+}
+
+/* Squircle background: Figma mask shape, filled with the type's surface token */
+.shape {
+  position: absolute;
+  inset: 0;
+  background-color: var(--list-icon-bg);
+  -webkit-mask: var(--list-icon-shape) center / 40px 40px no-repeat;
+  mask: var(--list-icon-shape) center / 40px 40px no-repeat;
+}
+
+.glyph {
+  position: relative;
+}
+
+.type-brand,
+.type-empty {
+  --list-icon-bg: var(--surface-purple);
+}
+.type-neutral {
+  --list-icon-bg: var(--surface-surface-border);
+}
+.type-accent {
+  --list-icon-bg: var(--surface-orange);
+}

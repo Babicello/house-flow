@@ -1,0 +1,163 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: clip;
+  padding-block: var(--spacing-2);
+  border: var(--border-width-default) solid transparent;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--content-active);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--interactive-focus);
+  outline-offset: 2px;
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  cursor: not-allowed;
+  color: var(--content-disabled);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ── Size ─────────────────────────────────────────────── */
+.size-x-small {
+  height: 24px;
+  padding-inline: var(--spacing-2);
+  gap: var(--spacing-1_5);
+}
+.size-small {
+  height: 32px;
+  padding-inline: var(--spacing-4);
+  gap: var(--spacing-1_5);
+}
+.size-medium {
+  height: 40px;
+  padding-inline: var(--spacing-5);
+  gap: var(--spacing-2_5);
+}
+.size-large {
+  height: 48px;
+  padding-inline: var(--spacing-5);
+  gap: var(--spacing-2_5);
+}
+
+/* Text style per size: Label M Strong (medium, large) / Label S Strong (small, x-small) */
+.size-medium .label,
+.size-large .label {
+  font-family: var(--label-m-strong-font);
+  font-size: var(--label-m-strong-size);
+  line-height: var(--label-m-strong-line-height);
+  font-weight: var(--label-m-strong-weight);
+}
+.size-small .label,
+.size-x-small .label {
+  font-family: var(--label-s-strong-font);
+  font-size: var(--label-s-strong-size);
+  line-height: var(--label-s-strong-line-height);
+  font-weight: var(--label-s-strong-weight);
+}
+
+/* ── type=Primary ─────────────────────────────────────── */
+.variant-primary {
+  background: var(--button-primary);
+}
+.variant-primary:hover:not(:disabled) {
+  background: var(--button-primary-hover);
+}
+.variant-primary:disabled {
+  background: var(--interactive-disabled-bg);
+}
+
+/* ── type=Secondary ───────────────────────────────────── */
+.variant-secondary {
+  border-color: var(--button-secondary-border);
+}
+.variant-secondary.size-small,
+.variant-secondary.size-x-small {
+  border-color: var(--surface-surface-border);
+}
+.variant-secondary:hover:not(:disabled) {
+  background: var(--interactive-hover);
+}
+.variant-secondary:disabled {
+  background: var(--interactive-disabled-bg);
+  border-color: var(--interactive-disabled-bg);
+}
+
+/* ── type=Danger ──────────────────────────────────────── */
+.variant-danger {
+  border-color: var(--button-danger-border);
+  color: var(--content-negative);
+}
+.variant-danger:hover:not(:disabled) {
+  background: var(--interactive-hover);
+}
+.variant-danger:disabled {
+  background: var(--interactive-disabled-bg);
+  border-color: var(--content-disabled);
+  color: var(--content-disabled);
+}
+/* Danger small / x-small use Label S (not strong) */
+.variant-danger.size-small .label,
+.variant-danger.size-x-small .label {
+  font-family: var(--label-s-font);
+  font-size: var(--label-s-size);
+  line-height: var(--label-s-line-height);
+  font-weight: var(--label-s-weight);
+}
+
+/* ── type=Link / Link-inverted / Link-stable ──────────── */
+.variant-link,
+.variant-link-inverted,
+.variant-link-stable {
+  padding-inline: 0;
+  border-radius: var(--radius-none);
+  gap: var(--spacing-2_5);
+}
+.variant-link .label,
+.variant-link-inverted .label,
+.variant-link-stable .label {
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-decoration-thickness: from-font;
+}
+.variant-link.size-medium .label,
+.variant-link.size-large .label,
+.variant-link-inverted.size-medium .label,
+.variant-link-inverted.size-large .label,
+.variant-link-stable.size-medium .label,
+.variant-link-stable.size-large .label {
+  font-family: var(--label-m-underline-font);
+  font-size: var(--label-m-underline-size);
+  line-height: var(--label-m-underline-line-height);
+  font-weight: var(--label-m-underline-weight);
+}
+.variant-link.size-small .label,
+.variant-link.size-x-small .label,
+.variant-link-inverted.size-small .label,
+.variant-link-inverted.size-x-small .label,
+.variant-link-stable.size-small .label,
+.variant-link-stable.size-x-small .label {
+  font-family: var(--label-s-underline-font);
+  font-size: var(--label-s-underline-size);
+  line-height: var(--label-s-underline-line-height);
+  font-weight: var(--label-s-underline-weight);
+}

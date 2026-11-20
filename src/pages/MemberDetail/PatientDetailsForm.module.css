@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Modal slot */
+.modal {
+  gap: var(--spacing-4);
+}
+
+/* Bottom sheet slot */
+.sheet {
+  gap: var(--spacing-6);
+  max-width: 480px;
+  margin-inline: auto;
+  padding-inline: var(--spacing-4);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-5);
+  width: 100%;
+}

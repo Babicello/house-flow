@@ -1,0 +1,158 @@
+/*
+ * Text styles — one class per Figma text style, bound to the typography tokens.
+ * Usage: <p className="type-body-s">…</p>
+ */
+
+/* Headings/Heading XL */
+.type-heading-xl {
+  font-family: var(--heading-xl-font);
+  font-size: var(--heading-xl-size);
+  line-height: var(--heading-xl-line-height);
+  font-weight: var(--heading-xl-weight);
+  letter-spacing: 0;
+}
+
+/* Headings/Heading M */
+.type-heading-m {
+  font-family: var(--heading-m-font);
+  font-size: var(--heading-m-size);
+  line-height: var(--heading-m-line-height);
+  font-weight: var(--heading-m-weight);
+  letter-spacing: 0;
+}
+
+/* Headings/Heading S */
+.type-heading-s {
+  font-family: var(--heading-s-font);
+  font-size: var(--heading-s-size);
+  line-height: var(--heading-s-line-height);
+  font-weight: var(--heading-s-weight);
+  letter-spacing: 0;
+}
+
+/* Headings/Heading XS */
+.type-heading-xs {
+  font-family: var(--heading-xs-font);
+  font-size: var(--heading-xs-size);
+  line-height: var(--heading-xs-line-height);
+  font-weight: var(--heading-xs-weight);
+  letter-spacing: 0;
+}
+
+/* Body/Body L */
+.type-body-l {
+  font-family: var(--body-l-font);
+  font-size: var(--body-l-size);
+  line-height: var(--body-l-line-height);
+  font-weight: var(--body-l-weight);
+  letter-spacing: 0;
+}
+
+/* Body/Body M */
+.type-body-m {
+  font-family: var(--body-m-font);
+  font-size: var(--body-m-size);
+  line-height: var(--body-m-line-height);
+  font-weight: var(--body-m-weight);
+  letter-spacing: 0;
+}
+
+/* Body/Body M Strong */
+.type-body-m-strong {
+  font-family: var(--body-m-strong-font);
+  font-size: var(--body-m-strong-size);
+  line-height: var(--body-m-strong-line-height);
+  font-weight: var(--body-m-strong-weight);
+  letter-spacing: 0;
+}
+
+/* Body/Body S */
+.type-body-s {
+  font-family: var(--body-s-font);
+  font-size: var(--body-s-size);
+  line-height: var(--body-s-line-height);
+  font-weight: var(--body-s-weight);
+  letter-spacing: 0;
+}
+
+/* Body/Body S Strong */
+.type-body-s-strong {
+  font-family: var(--body-s-strong-font);
+  font-size: var(--body-s-strong-size);
+  line-height: var(--body-s-strong-line-height);
+  font-weight: var(--body-s-strong-weight);
+  letter-spacing: 0;
+}
+
+/* Body/Body XS */
+.type-body-xs {
+  font-family: var(--body-xs-font);
+  font-size: var(--body-xs-size);
+  line-height: var(--body-xs-line-height);
+  font-weight: var(--body-xs-weight);
+  letter-spacing: 0;
+}
+
+/* Labels/Label M */
+.type-label-m {
+  font-family: var(--label-m-font);
+  font-size: var(--label-m-size);
+  line-height: var(--label-m-line-height);
+  font-weight: var(--label-m-weight);
+  letter-spacing: 0;
+}
+
+/* Labels/Label M Strong */
+.type-label-m-strong {
+  font-family: var(--label-m-strong-font);
+  font-size: var(--label-m-strong-size);
+  line-height: var(--label-m-strong-line-height);
+  font-weight: var(--label-m-strong-weight);
+  letter-spacing: 0;
+}
+
+/* Labels/Label M Underline */
+.type-label-m-underline {
+  font-family: var(--label-m-underline-font);
+  font-size: var(--label-m-underline-size);
+  line-height: var(--label-m-underline-line-height);
+  font-weight: var(--label-m-underline-weight);
+  letter-spacing: 0;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-decoration-thickness: from-font;
+}
+
+/* Labels/Label S */
+.type-label-s {
+  font-family: var(--label-s-font);
+  font-size: var(--label-s-size);
+  line-height: var(--label-s-line-height);
+  font-weight: var(--label-s-weight);
+  letter-spacing: 0;
+}
+
+/* Labels/Label S Strong */
+.type-label-s-strong {
+  font-family: var(--label-s-strong-font);
+  font-size: var(--label-s-strong-size);
+  line-height: var(--label-s-strong-line-height);
+  font-weight: var(--label-s-strong-weight);
+  letter-spacing: 0;
+}
+
+/* Labels/Label S Underline */
+.type-label-s-underline {
+  font-family: var(--label-s-underline-font);
+  font-size: var(--label-s-underline-size);
+  line-height: var(--label-s-underline-line-height);
+  font-weight: var(--label-s-underline-weight);
+  letter-spacing: 0;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-decoration-thickness: from-font;
+}

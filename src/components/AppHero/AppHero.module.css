@@ -1,0 +1,46 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-2_5);
+  width: 100%;
+}
+
+.artwork {
+  display: flex;
+  width: var(--spacing-12);
+  height: var(--spacing-12);
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-1);
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-1);
+  width: 100%;
+}
+
+.headingText {
+  flex: 1 0 0;
+  min-width: 180px;
+  color: var(--content-x-high);
+  overflow-wrap: break-word;
+}
+
+.filter {
+  flex-shrink: 0;
+}
+
+.subheadline {
+  width: 100%;
+  color: var(--content-high);
+  overflow-wrap: break-word;
+}

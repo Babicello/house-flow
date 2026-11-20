@@ -1,0 +1,321 @@
+/*
+ * Design tokens — mirrored from the Figma "Lite" library variables.
+ * Naming: Figma `group/name` → CSS `--group-name` (e.g. `surface/canvas` → `--surface-canvas`,
+ * `spacing/2_5` → `--spacing-2_5`). Colour tokens have Light + Dark modes.
+ */
+
+:root {
+  /* ── Spacing ───────────────────────────────────────────── */
+  --spacing-0: 0px;
+  --spacing-px: 1px;
+  --spacing-0_5: 2px;
+  --spacing-1: 4px;
+  --spacing-1_5: 6px;
+  --spacing-2: 8px;
+  --spacing-2_5: 10px;
+  --spacing-3: 12px;
+  --spacing-3_5: 14px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+
+  /* ── Radius ────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Border width ──────────────────────────────────────── */
+  --border-width-default: 1px;
+  --border-width-2: 2px;
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-family-base: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+
+  --heading-xl-font: var(--font-family-base);
+  --heading-xl-size: 96px;
+  --heading-xl-line-height: 102px;
+  --heading-xl-weight: 600;
+
+  --heading-m-font: var(--font-family-base);
+  --heading-m-size: 32px;
+  --heading-m-line-height: 40px;
+  --heading-m-weight: 600;
+
+  --heading-s-font: var(--font-family-base);
+  --heading-s-size: 24px;
+  --heading-s-line-height: 32px;
+  --heading-s-weight: 600;
+
+  --heading-xs-font: var(--font-family-base);
+  --heading-xs-size: 18px;
+  --heading-xs-line-height: 24px;
+  --heading-xs-weight: 600;
+
+  --body-l-font: var(--font-family-base);
+  --body-l-size: 18px;
+  --body-l-line-height: 28px;
+  --body-l-weight: 430;
+
+  --body-m-font: var(--font-family-base);
+  --body-m-size: 16px;
+  --body-m-line-height: 24px;
+  --body-m-weight: 430;
+
+  --body-m-strong-font: var(--font-family-base);
+  --body-m-strong-size: 16px;
+  --body-m-strong-line-height: 24px;
+  --body-m-strong-weight: 600;
+
+  --body-s-font: var(--font-family-base);
+  --body-s-size: 14px;
+  --body-s-line-height: 20px;
+  --body-s-weight: 430;
+
+  --body-s-strong-font: var(--font-family-base);
+  --body-s-strong-size: 14px;
+  --body-s-strong-line-height: 20px;
+  --body-s-strong-weight: 600;
+
+  --body-xs-font: var(--font-family-base);
+  --body-xs-size: 12px;
+  --body-xs-line-height: 16px;
+  --body-xs-weight: 430;
+
+  --label-m-font: var(--font-family-base);
+  --label-m-size: 16px;
+  --label-m-line-height: 20px;
+  --label-m-weight: 500;
+
+  --label-m-strong-font: var(--font-family-base);
+  --label-m-strong-size: 16px;
+  --label-m-strong-line-height: 24px;
+  --label-m-strong-weight: 530;
+
+  --label-m-underline-font: var(--font-family-base);
+  --label-m-underline-size: 16px;
+  --label-m-underline-line-height: 24px;
+  --label-m-underline-weight: 500;
+
+  --label-s-font: var(--font-family-base);
+  --label-s-size: 14px;
+  --label-s-line-height: 20px;
+  --label-s-weight: 500;
+
+  --label-s-strong-font: var(--font-family-base);
+  --label-s-strong-size: 14px;
+  --label-s-strong-line-height: 20px;
+  /* Figma binds Label S Strong to `label-m-strong/weight` */
+  --label-s-strong-weight: var(--label-m-strong-weight);
+
+  --label-s-underline-font: var(--font-family-base);
+  --label-s-underline-size: 14px;
+  --label-s-underline-line-height: 20px;
+  --label-s-underline-weight: 500;
+
+  /* ── Effects ───────────────────────────────────────────── */
+  --shadow-shadow-4: rgba(32, 30, 23, 0.04);
+  --shadow-shadow-8: rgba(32, 30, 23, 0.08);
+  /* Effect style "Shadow-s" */
+  --shadow-s: 0px 1px 2px -1px var(--shadow-shadow-8), 0px 2px 4px 0px var(--shadow-shadow-4);
+  /* Effect style "Shadow-xl" */
+  --shadow-xl: 0px 44.44px 88.89px -44.44px var(--shadow-shadow-8),
+    0px 88.89px 177.78px 0px var(--shadow-shadow-4);
+
+  /* ── Primitive colours ─────────────────────────────────── */
+  --color-purple-400: #a6a7f9;
+}
+
+/*
+ * Breakpoint collection (Figma modes Desktop ≥900 / Tablet ≥660 / Mobile <660).
+ * Only the heading tokens differ between modes.
+ */
+@media (max-width: 899px) {
+  :root {
+    --heading-xl-size: 90px;
+    --heading-xl-line-height: 96px;
+    --heading-m-size: 30px;
+    --heading-m-line-height: 38px;
+    --heading-s-size: 22px;
+    --heading-s-line-height: 30px;
+  }
+}
+
+@media (max-width: 659px) {
+  :root {
+    --heading-xl-size: 70px;
+    --heading-xl-line-height: 78px;
+    --heading-m-size: 28px;
+    --heading-m-line-height: 36px;
+    --heading-s-size: 20px;
+    --heading-s-line-height: 28px;
+    --heading-xs-size: 16px;
+    --heading-xs-line-height: 20px;
+  }
+}
+
+/* ── Colour tokens: Light mode (default) ─────────────────── */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --surface-canvas: #f8f4ee;
+  --surface-canvas-border: #e6dfd2;
+  --surface-surface: #fdfdfd;
+  --surface-surface-border: #e6dfd2;
+  --surface-surface-border-mute: #efe9e1;
+  --surface-elevated: #fbf9f6;
+  --surface-highlight: #f1f3ff;
+  --surface-highlight-hover: #d4d7ff;
+  --surface-purple: #d4d7ff;
+  --surface-purple-primary: #655aec;
+  --surface-orange: #fdb62a;
+
+  --content-x-high: #3a3732;
+  --content-high: #6b645d;
+  --content-active: #342a7b;
+  --content-negative: #b90536;
+  --content-disabled: rgba(32, 30, 23, 0.2);
+  --content-inverse-stable: #fdfdfd;
+
+  --interactive-hover: rgba(32, 30, 23, 0.04);
+  --interactive-focus: rgba(32, 30, 23, 0.7);
+  --interactive-disabled-bg: rgba(32, 30, 23, 0.08);
+  --interactive-content-hover: #7f7872;
+
+  --button-primary: #fdb62a;
+  --button-primary-hover: #f69e00;
+  --button-secondary-border: rgba(32, 30, 23, 0.12);
+  --button-danger-border: rgba(161, 10, 56, 0.2);
+
+  --link-hover: #342a7b;
+  --link-hover-inverted: #c1c9ff;
+
+  --avatar-purple: #5636e4;
+  --avatar-purple-variant: #c1c9ff;
+  --avatar-orange: #fdb62a;
+  --avatar-orange-variant: #452501;
+  --avatar-rim: rgba(251, 249, 246, 0.4);
+
+  --badge-purple: #d4d7ff;
+  --badge-purple-content: #211d50;
+
+  --alert-error: #e40c46;
+
+  --check-radio-default-bg: #fbf9f6;
+  --check-radio-default-border: #b6aea5;
+  --check-radio-active-bg: #4a2bc7;
+  --toggle-default-bg: #d5cfc3;
+  --toggle-active-bg: #4a2bc7;
+  --toggle-knob: #fbf9f6;
+  --chip-default-border: #d5cfc3;
+
+  --content-low: #b6aea5;
+  --content-muted: #d5cfc3;
+  --content-xxxx-high: #1a1913;
+  --content-active-stable: #211d50;
+
+  --input-bg: #fdfdfd;
+  --input-border: #b6aea5;
+  --input-border-active: #7576ed;
+  --input-border-disabled: #d5cfc3;
+  --input-muted: rgba(0, 0, 0, 0.06);
+
+  --feedback-warning: #e40c46;
+
+  --chip-active-bg: #c1c9ff;
+  --chip-active-bg-hover: #8480f9;
+  --chip-active-border: #342a7b;
+
+  --interactive-pressed: rgba(32, 30, 23, 0.12);
+  --button-bsheet-bg: rgba(32, 30, 23, 0.04);
+
+  /* App-level (not a Figma variable): dimmed backdrop behind modal / bottom sheet */
+  --overlay-scrim: rgba(32, 30, 23, 0.4);
+}
+
+/* ── Colour tokens: Dark mode ────────────────────────────── */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --surface-canvas: #16140d;
+  --surface-canvas-border: #3a3732;
+  --surface-surface: #201e17;
+  --surface-surface-border: #3a3732;
+  --surface-surface-border-mute: #2a2820;
+  --surface-elevated: #25231b;
+  --surface-highlight: #1f1847;
+  --surface-highlight-hover: #1f1847;
+  --surface-purple: #4a2bc7;
+  --surface-purple-primary: #655aec;
+  --surface-orange: #f69e00;
+
+  --content-x-high: #d5cfc3;
+  --content-high: #a69e95;
+  --content-active: #d4d7ff;
+  --content-negative: #fe677f;
+  --content-disabled: rgba(251, 249, 246, 0.2);
+  --content-inverse-stable: #f1f3ff;
+
+  --interactive-hover: rgba(251, 249, 246, 0.04);
+  --interactive-focus: rgba(251, 249, 246, 0.7);
+  --interactive-disabled-bg: rgba(251, 249, 246, 0.12);
+  --interactive-content-hover: #fbf9f6;
+
+  --button-primary: #7b3306;
+  --button-primary-hover: #b55200;
+  --button-secondary-border: rgba(251, 249, 246, 0.12);
+  --button-danger-border: rgba(255, 204, 211, 0.4);
+
+  --link-hover: #d4d7ff;
+  --link-hover-inverted: #1f1847;
+
+  --avatar-purple: #8480f9;
+  --avatar-purple-variant: #211d50;
+  --avatar-orange: #b37407;
+  --avatar-orange-variant: #f1e1b0;
+  --avatar-rim: rgba(32, 30, 23, 0.4);
+
+  --badge-purple: #4a2bc7;
+  --badge-purple-content: #ebebfc;
+
+  --alert-error: #ffccd3;
+
+  --check-radio-default-bg: #1a1913;
+  --check-radio-default-border: #7f7872;
+  --check-radio-active-bg: #5636e4;
+  --toggle-default-bg: #6b645d;
+  --toggle-active-bg: #4a2bc7;
+  --toggle-knob: #efe9e1;
+  --chip-default-border: #3a3732;
+
+  --content-low: #6b645d;
+  --content-muted: #6b645d;
+  --content-xxxx-high: #f8f4ee;
+  --content-active-stable: #211d50;
+
+  --input-bg: rgba(0, 0, 0, 0.1);
+  --input-border: #a69e95;
+  --input-border-active: #a6a7f9;
+  --input-border-disabled: #fbf9f6;
+  --input-muted: rgba(255, 255, 255, 0.06);
+
+  --feedback-warning: #e40c46;
+
+  --chip-active-bg: #8480f9;
+  --chip-active-bg-hover: #c1c9ff;
+  --chip-active-border: #1f1847;
+
+  --interactive-pressed: rgba(251, 249, 246, 0.12);
+  --button-bsheet-bg: rgba(251, 249, 246, 0.04);
+
+  --overlay-scrim: rgba(0, 0, 0, 0.6);
+}

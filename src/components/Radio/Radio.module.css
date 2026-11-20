@@ -1,0 +1,28 @@
+.radio {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: var(--border-width-default) solid var(--check-radio-default-border);
+  border-radius: var(--radius-full);
+  background: var(--check-radio-default-bg);
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+/* is Checked?=True — filled circle with a 10px point */
+.checked {
+  border-color: var(--check-radio-active-bg);
+  background: var(--check-radio-active-bg);
+}
+
+.checked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--content-inverse-stable);
+}

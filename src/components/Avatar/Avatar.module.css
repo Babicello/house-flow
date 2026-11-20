@@ -1,0 +1,103 @@
+.avatar {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  border: var(--border-width-default) solid var(--avatar-rim);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-s);
+}
+
+.initials {
+  flex: 1 0 0;
+  width: 100%;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Type ─────────────────────────────────────────────── */
+.type-initials-brand {
+  background: var(--avatar-orange);
+  color: var(--avatar-orange-variant);
+}
+.type-initials-alt {
+  background: var(--avatar-purple);
+  color: var(--avatar-purple-variant);
+}
+
+/* ── Size ─────────────────────────────────────────────── */
+.size-S {
+  width: 24px;
+  height: 24px;
+}
+.size-S .initials {
+  /* Figma uses a raw 10px here (no text style) */
+  font-family: var(--body-s-strong-font);
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: var(--body-s-strong-weight);
+}
+
+.size-M {
+  width: 36px;
+  height: 36px;
+}
+.size-M .initials {
+  font-family: var(--body-s-strong-font);
+  font-size: var(--body-s-strong-size);
+  line-height: var(--body-s-strong-line-height);
+  font-weight: var(--body-s-strong-weight);
+}
+
+.size-L {
+  width: 48px;
+  height: 48px;
+}
+.size-L .initials {
+  font-family: var(--body-m-strong-font);
+  font-size: var(--body-m-strong-size);
+  line-height: var(--body-m-strong-line-height);
+  font-weight: var(--body-m-strong-weight);
+}
+
+.size-XL {
+  width: 56px;
+  height: 56px;
+}
+.size-XL .initials {
+  font-family: var(--body-l-font);
+  font-size: var(--body-l-size);
+  line-height: var(--body-l-line-height);
+  font-weight: var(--body-l-weight);
+}
+
+.size-XXL {
+  width: 90px;
+  height: 90px;
+}
+.size-XXL .initials {
+  font-family: var(--heading-s-font);
+  font-size: var(--heading-s-size);
+  line-height: var(--heading-s-line-height);
+  font-weight: var(--heading-s-weight);
+}
+
+.size-XXXL {
+  width: 230px;
+  height: 230px;
+  border-width: 4px;
+  box-shadow: var(--shadow-xl);
+}
+.size-XXXL .initials {
+  font-family: var(--heading-xl-font);
+  font-size: var(--heading-xl-size);
+  line-height: var(--heading-xl-line-height);
+  font-weight: var(--heading-xl-weight);
+}

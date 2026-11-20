@@ -1,0 +1,35 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-0_5);
+  min-width: 120px;
+  max-width: 600px;
+  margin: 0;
+  padding: var(--spacing-1);
+  overflow: clip;
+  border: var(--border-width-default) solid var(--surface-surface-border);
+  border-radius: var(--radius-xl);
+  background: var(--surface-surface);
+  box-shadow: var(--shadow-s);
+}
+
+/* Show Scroll=True */
+.scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-surface-border) var(--surface-surface);
+}
+.scroll::-webkit-scrollbar {
+  width: 17px;
+}
+.scroll::-webkit-scrollbar-track {
+  border-left: var(--border-width-default) solid var(--surface-surface-border-mute);
+  background: var(--surface-surface);
+}
+.scroll::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 99px;
+  background: var(--surface-surface-border) padding-box;
+}
